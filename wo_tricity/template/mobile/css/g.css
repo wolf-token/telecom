@@ -1,0 +1,23 @@
+.ft{
+	float: left;
+}
+.fu{
+	float:right;
+}
+.nof{
+	float:none;
+}
+body{
+	background-image: url(../img/zhu.jpg);
+	background-position: center;
+	background-size: auto;
+}
+.header{
+	width:1200px;
+	height:40px;
+	background-color:lavender;
+}
+.logo-banner{
+	width:1200px;
+	height:
+}

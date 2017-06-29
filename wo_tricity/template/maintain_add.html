@@ -1,0 +1,76 @@
+{template 'common/header'}
+
+<ul class="nav nav-tabs">
+      <li {if $operation == 'list'} class="active" {/if}><a href="{php echo  $this->createWebUrl('maintain', array('op'=>'list'));}">维修网点列表</a></li>
+       <li {if $operation == 'add'} class="active" {/if}><a href="{php echo  $this->createWebUrl('maintain', array('op'=>'add'));}">维修网点添加</a></li>
+</ul>
+<div class="clearfix"> 
+    <form id="theform" class="form form-horizontal" action="{php echo  $this->createWebUrl('maintain', array('op'=>'add'));}" method="post">
+	
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                维修网点添加
+            </div>
+            <div class="panel-body">
+                
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">维修网点名称</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" name="name" value="" class="form-control">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">联系电话</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="tell" name="tell" value="" class="form-control">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">营业时间</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" name="start" value="" class="form-control">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">门店地址</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" name="position" value="" class="form-control">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">营业厅经度</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" name="lng" value="" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">营业厅纬度</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" name="lat" value="" class="form-control">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">维修网点展示图</label>
+                    <div class="col-sm-9 col-xs-12">
+                      {php echo tpl_form_field_image('photo');}
+                    </div>
+                 </div>
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">门店所属城市</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" name="address" value="" class="form-control">（区县）
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label"></label>
+                    <div class="col-md-2 col-lg-1">
+                        <input name="submit" type="submit" value="添加" class="btn btn-primary btn-block">
+                        <input type="hidden" name="token" value="85616f84">
+                    </div>
+                </div>
+				
+            </div>
+			
+        </div>
+    </form>
+</div>

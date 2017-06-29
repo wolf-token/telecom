@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>电信</title>
+		<link rel="stylesheet" type="text/css" href="../addons/wo_tricity/template/mobile/css/reset200802.css" />
+		<style>
+			.header {
+				width: 100%;
+				height: auto;
+				/*border: 1px solid red;*/
+				background: #D9EDF7;
+			}
+			
+			img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.header-a {
+				width: 49%;
+				height: 50px;
+				/*border-bottom: 1px solid #747474;*/
+				margin: 0 auto;
+				
+			}
+			
+			
+			
+			
+			.bander {
+				width: 100%;
+				border-bottom: 1px solid #747474;
+				
+			}
+			
+			.bander-img {
+				width: 37%;
+				height: 135px;
+				margin: 8% 3% 3% 3%;
+			}
+			
+			.bander-img img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.bander-ziti {
+				width: 55%;
+				height: auto;
+				/*border: 1px solid red;*/
+				margin-left: 2%;
+				margin-top: 5%;
+			}
+			
+			.ziti-img {
+				width: 8%;
+				height: auto;
+				margin-right: 8px;
+			}
+			
+			.ziti-img img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.ziti-ziti {
+				font-family: '微软雅黑';
+				font-size: 13px;
+				line-height: 20px;
+				overflow: hidden;
+				width:80%;
+			}
+			
+			.zianniu {
+				width: 100%;
+				/*height: 35px;*/
+				margin-bottom: 2%;
+			}
+			
+			.zianniu li {
+				display: inline-block;
+				/*border-radius: 5px;*/
+			}
+			
+			.zi-anniu-a {
+				width: 34%;
+				/*height: 35px;*/
+				background-color: #F75F48;
+				margin-left: 1%;
+			}
+			
+			.zi-anniu-b {
+				width: 25%;
+				/*height: 35px;*/
+				background-color: #79B6CB;
+			}
+			
+			.zi-anniu-c {
+				width: 35%;
+				/*height: 35px;*/
+				background-color: #458AC5;
+			}
+			
+			.zi-anniu-a div {
+				float: left;
+			}
+			
+			.zi-anniu-b div {
+				float: left;
+			}
+			
+			.zi-anniu-c div {
+				float: left;
+			}
+			
+			.zhezhao {
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.4);
+				position: fixed;
+				top: 0;
+				padding: 0 20%;
+				display: none;
+
+			}
+			.dianhuan{
+				position: absolute;
+				top:35%;
+				width: 42%;
+				background-color: #FFFFFF;
+				text-align: center;
+				border-radius: 15px;
+			}
+			.dianhuan-zhu{
+				text-align: center;
+				height: 65px;
+				width: 100%;
+				border-radius: 15px;
+			}
+			.dianhuan-zhu p{
+				text-align: center;
+				margin:8% 0;
+				font-family: "楷体";
+				font-size: 20px;
+				border-radius: 15px;
+			}
+			.quxiao{
+				width:100%;
+				height: 50px;
+				/*background-color: #ccc;*/
+				margin: 0 auto;
+				line-height: 50px;
+				font-family: "微软雅黑";
+				font-size: 18px;
+				border-top: 2px solid #3C3C3C;
+			}
+			/*.quxiao:hover{
+				background-color: #7b7070;
+			}*/
+			.dddd{
+				display:block;
+			}
+			.aaaa{
+				display:none;
+			}
+			.bang-a-zi{
+				width: 75%;
+				height: 50px;
+				line-height: 50px;
+				font-family: "宋体";
+				font-size: 20px;
+				font-weight: 700;
+				color:#428BCA;
+				text-align: center;
+				/*margin-left: 25%;*/
+
+			}
+			.bang-a-img{
+				width: 15px;
+				height: 15px;
+				margin: 10% 0;
+			}
+			.bang-a-img img{
+				width: 100%;
+				height: 100%;
+			}
+			.yingcang{
+				width: 100%;
+				height: auto;
+				background-color: #C0C0C0;
+				display: none;
+				padding-bottom: 12%;
+				position:absolute;
+				top:10%;
+
+
+			}
+			.yingcang li{
+				border-bottom: 1px solid #122B40;
+				width: 80%;
+				margin: 0 auto;
+				text-align: center;
+				height: 40px;
+				line-height: 40px;
+			}
+			.quxiao-ss{
+				width:15%;
+				height: 40px;
+				background-color:#6b6565;
+				margin: 0 auto;
+				line-height: 40px;
+				font-family: "微软雅黑"
+				font-size: 18px;
+				float: right;
+				/*border-top: 2px solid #3C3C3C;*/
+				text-align: center;
+				margin-right: 5%;
+				margin-top: 1%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<div class="header-a ft" id="huadong-a" style="border-right: 1px solid #fff;">
+				<div class="bang-a-zi ft" >区域选择</div><div class="bang-a-img ft"><img src="../addons/wo_tricity/template/mobile/imges/7.png"/></div>
+				<div class="nof"></div>
+				
+			</div>
+			
+			<div class="header-a ft" id="huadong-b">
+				<div class="bang-a-zi ft" style="border-right: 0px">手机维修点</div><div class="bang-a-img ft"><img src="../addons/wo_tricity/template/mobile/imges/7.png"/></div>
+				<div class="nof"></div>
+			</div>
+
+			<div class="yingcang" id="huaru-a">
+				<ul >
+					<li style="height: 10px; border-bottom: 0px solid;"></li>
+					<a href="{php echo  $this->createMobileUrl('Index', array('id'=>0));}"><li>不分区域</li></a>
+					{loop $area $ite}
+					<a href="{php echo  $this->createMobileUrl('Index', array('id'=>$ite['id']));}"><li>{$ite['name']}</li></a>
+					{/loop}
+					<div class="quxiao-ss" id="anniuxi-a">取消</div>
+				</ul>
+
+			</div>
+			<!-- /////////////////////////////// -->
+			<div class="yingcang" id="huaru-b">
+				<ul >
+					<li style="height: 10px; border-bottom: 0px;"></li>
+					{loop $index $item}
+					<a href="{php echo  $this->createMobileUrl('Maintain', array('id'=>$item['id']));}"><li>{$item['name']}</li></a>
+					{/loop}
+					<div class="quxiao-ss" id="anniuxi-b">取消</div>
+				</ul>
+
+			</div>
+			<div class="nof"></div>
+		</div>
+		{loop $listen $key $it}
+		<div class="bander">
+			<div class="bander-img ft">
+				<img src="http://telecom.yichujilian.com/attachment/{$it['photo']}">
+			</div>
+			<div class="bander-ziti ft">
+				<div style="font-weight: 700;margin-bottom: 15px;margin-top: 5px;font-size: 20px">{$it['name']}</div>
+				<div style="margin-bottom: 5px;">
+					<div class="ziti-img ft"><img src="../addons/wo_tricity/template/mobile/imges/8.png"/></div>
+					<div class="ft ziti-ziti">{$it['position']}</div>
+					<div class="nof"></div>
+				</div>
+				<div style="margin-bottom: 5px;">
+					<div class="ziti-img ft"><img src="../addons/wo_tricity/template/mobile/imges/9.png"/></div>
+					<div class="ft ziti-ziti">{$it['area']}</div>
+					<div class="nof"></div>
+				</div>
+				<div style="margin-bottom: 5px;">
+					<div class="ziti-img ft"><img src="../addons/wo_tricity/template/mobile/imges/13.png"/></div>
+					<div class="ft ziti-ziti">{$it['wechat']}</div>
+					<div class="nof"></div>
+				</div>
+				<div style="margin-bottom: 2%;">
+					<div class="ziti-img ft"><img src="../addons/wo_tricity/template/mobile/imges/10.png"/></div>
+					<div class="ft ziti-ziti" >{$it['starttime']}</div>
+					<div class="nof"></div>
+				</div>
+			</div>
+			<div class="nof"></div>			
+			<div class="zianniu">
+				<ul>
+					<div class="zhezhao" id="asas{$key}">
+							<div class="dianhuan">
+							<div class="dianhuan-zhu">
+							
+								<p><span style="color:#2285ad;">{$it['tell']}</span></p>
+								<p style="font-size: 12px;color: red;">点击号码呼叫</p>
+							</div>
+							<div class="quxiao" >返回列表</div>
+							</div>
+						</div>
+					<li class="zi-anniu-a" id="dianhua">			
+						<div style="width:15%; margin: 6% -3% 6% 5%;"><img src="../addons/wo_tricity/template/mobile/imges/tell.png"/></div>
+						<div style="color: #fff; width:65%; text-align: center; font-size: 16px;font-weight:bold;line-height: 35px">呼叫店长</div>
+						<div class="nof"></div>			
+					</li>
+					<li class="zi-anniu-b">
+					<a href="http://api.map.baidu.com/marker?location={$it['lat']},{$it['lng']}&title={$it['name']}&name={$it['name']}&content={$it['position']}&output=html">
+						<div style="width:22%; margin: 7% -5% 7% 2%;"><img src="../addons/wo_tricity/template/mobile/imges/address.png"/></div>
+						<div style="width:65%; text-align: center; font-size: 16px;font-weight: 700;line-height: 35px;">到这里</div>
+						<div class="nof"></div>
+					</a>
+					</li>
+					<li class="zi-anniu-c">
+					<a href="{php echo  $this->createMobileUrl('event', array('id'=>$it['id']));}">
+						<div style="width:20%; margin: 3% -3% 3% 2%;"><img src="../addons/wo_tricity/template/mobile/imges/gift.png"/></div>
+						<div style="width:65%; text-align: center; font-size: 16px;font-weight: 700;line-height: 35px;">最新活动</div>
+						<div class="nof"></div>
+					</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	{/loop}
+		<script src="../addons/wo_tricity/template/mobile/js/jquery-1.8.3.js"></script>
+		<!-- <script src="../addons/wo_tricity/template/mobile/js/jquery.select.js"></script> -->
+		<script>
+			$(function() {
+					$(".zi-anniu-a").each(function(index,element){
+
+						$(this).click(function() {
+							// alert(index);
+						if($(".zhezhao").is(":hidden")) {
+							$("#asas"+index).show(); //如果元素为隐藏,则将它显现
+						} else {
+							$("#asas"+index).hide(); //如果元素为显现,则将其隐藏
+						}
+					})
+					})
+				});
+				$(function() {
+					$(".quxiao").each(function(index,element){
+
+						$(this).click(function() {
+						if($("#asas"+index).is(":hidden")) {
+							$("#asas"+index).show(); //如果元素为隐藏,则将它显现
+						} else {
+							$("#asas"+index).hide(); //如果元素为显现,则将其隐藏
+						}
+					})
+					});
+				});
+				$(function(){
+					$("#huadong-a").click(function(){
+						$("#huaru-a").slideDown('slow');
+					})
+				});
+				
+				$(function(){
+					$('#huaru-a li').click(function(){
+						$("#huaru-a").slideUp('slow');
+					})
+				})
+				$(function(){
+					$('#anniuxi-a').click(function(){
+						$("#huaru-a").slideUp('slow');
+					})
+				})
+				//////////////////////
+				$(function(){
+					$("#huadong-b").click(function(){
+						$("#huaru-b").slideDown('slow');
+					})
+				});
+				
+				$(function(){
+					$('#huaru-b li').click(function(){
+						$("#huaru-b").slideUp('slow');
+					})
+				})
+				$(function(){
+					$('#anniuxi-b').click(function(){
+						$("#huaru-b").slideUp('slow');
+					})
+				})
+		</script>
+	</body>
+
+</html>

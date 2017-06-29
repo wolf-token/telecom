@@ -1,0 +1,36 @@
+{template 'common/header'}
+
+<ul class="nav nav-tabs">
+      <li {if $operation == 'list'} class="active" {/if}><a href="{php echo  $this->createWebUrl('area', array('op'=>'list'));}">区域列表</a></li>
+       <li {if $operation == 'add'} class="active" {/if}><a href="{php echo  $this->createWebUrl('area', array('op'=>'add'));}">区域添加</a></li>
+        <li {if $operation == 'edit'} class="active" {/if}><a>区域信息修改</a></li>
+</ul>
+<div class="clearfix"> 
+    <form id="theform" class="form form-horizontal" action="{php echo  $this->createWebUrl('area', array('op'=>'update'));}" method="post">
+    
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                区域信息修改
+            </div>
+            <div class="panel-body">
+                
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">区域名称</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" name="name" value="{$area_edit['name']}" class="form-control">
+                    </div>
+                </div>
+                 <input type="hidden" name="id" value="{$area_edit['id']}">
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label"></label>
+                    <div class="col-md-2 col-lg-1">
+                        <input name="submit" type="submit" value="修改" class="btn btn-primary btn-block">
+                        <input type="hidden" name="token" value="85616f84">
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </form>
+</div>

@@ -1,0 +1,71 @@
+{template 'common/header'}
+
+<ul class="nav nav-tabs">
+      <li {if $operation == 'list'} class="active" {/if}><a href="{php echo  $this->createWebUrl('work', array('op'=>'list'));}">活动列表</a></li>
+       <li {if $operation == 'add'} class="active" {/if}><a href="{php echo  $this->createWebUrl('work', array('op'=>'add'));}">活动添加</a></li>
+</ul>
+<div class="clearfix"> 
+    <form id="theform" class="form form-horizontal" action="{php echo  $this->createWebUrl('work', array('op'=>'add'));}" method="post">
+	
+        <div class="panel panel-default">
+            <div class="panel-heading">
+               活动添加
+            </div>
+            <div class="panel-body">
+                  <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">营业厅网点信息</label>
+                    <div class="col-sm-9 col-xs-12">
+                       <select name="pid" style="height: 40px;width: 500px;border-radius: 5px">
+                          {loop $work_add $item}
+                          <option value="{$item['id']}">网点名称：{$item['name']}&nbsp;&nbsp;&nbsp;网点电话：{$item['tell']}</option> 
+                          {/loop} 
+                       </select>
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">应用网点</label>
+                    <div class="col-sm-9 col-xs-12" style="position: relative;top: 6px">
+                        <input type="radio" name="kind" value="0" checked><span style="position: relative;top: -1px">应用一个营业厅</span>&nbsp;&nbsp;
+                        <input type="radio" name="kind" value="1"><span style="position: relative;top: -1px">应用所有营业厅</span>
+                        <span style="position: relative;top: -1px;color:red">（如果活动应用到所有营业厅请选择应用到所有营业厅）</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">活动主题</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" name="name" value="" class="form-control">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">活动内容</label>
+                    <div class="col-sm-9 col-xs-12">
+                         {php echo tpl_ueditor('content');}
+                    </div>
+                </div>
+               
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">活动开始时间</label>
+                    <div class="col-sm-9 col-xs-12">
+                      {php echo tpl_form_field_daterange('datelimit', array('start'=>date('Y-m-d H:i',$reply['starttime']),'end'=>date('Y-m-d H:i',$reply['endtime'])), true)}
+                    </div>
+                </div>
+                
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">活动宣传图</label>
+                    <div class="col-sm-9 col-xs-12">
+                      {php echo tpl_form_field_image('picture');}
+                    </div>
+                 </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label"></label>
+                    <div class="col-md-2 col-lg-1">
+                        <input name="submit" type="submit" value="添加" class="btn btn-primary btn-block">
+                        <input type="hidden" name="token" value="85616f84">
+                    </div>
+                </div>
+				
+            </div>
+			
+        </div>
+    </form>
+</div>

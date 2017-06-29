@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>最新活动</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link href="/addons/wo_tricity/template/mobile/css/mui.min.css" rel="stylesheet" />
+
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.lunbo{
+				width: 100%;
+   				height: auto;
+    			border-top:15px solid #fff9f9;
+    			border-left: 15px solid #FFF9F9;
+    			border-right:15px solid #fff9f9;
+			}
+			.lunbo-img{
+				width: 100%;
+				/*height: 500px;*/
+			}
+			.lunbo-jie{
+				width:100%;
+   				height:40px;
+    			border-bottom:3px solid #ccc;
+    			border-left: 15px solid #FFF9F9;
+    			border-right:15px solid #fff9f9;
+    			font-family: "微软雅黑";
+    			font-size: 20px;
+    			font-weight: 600;
+    			margin-top: 5%;
+			}
+			body{
+				background: #FFF9F9;
+			}
+			.shouming-img{
+				float: left;
+				width:7%;
+				height: 25px;
+				margin-right: 2%;
+				/*border: 1px solid red;*/
+
+			}
+			.shouming-img img{
+				width:100%;
+				height: 100%;
+			}
+			.shouming-ziti{
+
+				float: left;
+				width:84%;
+				height: 30px;
+				/*border: 1px solid red;*/
+				font-family: "宋体";
+    			font-size: 16px;
+    			/*font-weight: 600;*/
+    			line-height: 30px;
+			}
+			ol,
+			ul {
+				list-style: none;
+			}
+			.xiangxi{
+				width: 100%;
+   				height: auto;
+   				margin-top:3%;
+    			/*border-top:40px solid #fff9f9;*/
+    			border-left: 15px solid #FFF9F9;
+    			border-right:15px solid #fff9f9;
+			}
+			.jianjiediv{
+				width: 100%;
+   				height: auto;
+    			border-top:15px solid #fff9f9;
+    			border-left: 15px solid #FFF9F9;
+    			border-right:15px solid #fff9f9;
+			}
+			.jianjie-ziti{
+				font-family: "宋体";
+    			font-size: 25px;
+    			font-weight: 600;
+    			line-height: 38px;
+    			width:100%;
+    			height: 39px;
+			}
+			.ziti-xiqing{
+				font-family: "宋体";
+    			/*font-weight: 600;*/
+    			/*line-height: 100px;*/
+    			width:100%;
+    			text-align:center;
+    			word-wrap:break-word;
+				word-break:break-all;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="lunbo">
+			<div class="lunbo-img">
+				<!-- <div class="mui-slider banner-bner">
+			<div class="mui-slider-group mui-slider-loop">
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#"><img src="/attachment/{$event['pictures']['imguqcl']}" /></a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="#"><img src="/attachment/{$event['pictures']['living']}" /></a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="#"><img src="/attachment/{$event['pictures']['type']}" /></a>
+				</div>
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#"><img src="/attachment/{$event['pictures']['other']}" /></a>
+				</div>
+			</div> -->
+			
+			<div class="mui-slider banner-bner">
+			<div class="mui-slider-group mui-slider-loop">
+				<!-- <div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#"><img src="/attachment/{$event['pictures']['other']}" /></a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="#"><img src="/attachment/{$event['pictures']['imguqcl']}" /></a>
+				</div> -->
+				<div class="mui-slider-item">
+
+					<a href="#"><img src="http://telecom.yichujilian.com/attachment/{$event['picture']}" /></a>
+				</div>
+				<!-- <div class="mui-slider-item">
+					<a href="#"><img src="/attachment/{$event['pictures']['type']}" /></a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="#"><img src="/attachment/{$event['pictures']['other']}" /></a>
+				</div>
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#"><img src="/attachment/{$event['pictures']['imguqcl']}" /></a>
+				</div> -->
+			</div>
+
+			<!-- <div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+			</div> -->
+		</div>
+	</div>
+		</div>
+		<div class="lunbo-jie">
+				<span style="color:red;">{$event['name']}</span>
+		</div>
+		<div class="xiangxi">
+			<ul>
+				<li class="ft shouming-img"><img src="../addons/wo_tricity/template/mobile/imges/chance.png"/></li>
+				<li class="ft shouming-ziti"><span><b>主办方名称:</b>&nbsp;{$store['name']}</span></li>
+			</ul>
+			<ul>
+				<li class="ft shouming-img"><img src="../addons/wo_tricity/template/mobile/imges/time.png"/></li>
+				<li class="ft shouming-ziti"><span><b>活动开始时间:</b>&nbsp;{$event['starttime']}</span></li>
+			</ul>
+			<ul>
+				<li class="ft shouming-img"><img src="../addons/wo_tricity/template/mobile/imges/time.png"/></li>
+				<li class="ft shouming-ziti"><span><b>活动结束时间:</b>&nbsp;{$event['endtime']}</span></li>
+			</ul>
+			<ul>
+			<a style="color: black;" href="http://api.map.baidu.com/marker?location={$store['lat']},{$store['lng']}&title={$store['name']}&name={$store['name']}&content={$store['position']}&output=html">
+				<li class="ft shouming-img"><img src="../addons/wo_tricity/template/mobile/imges/position.png"></li>
+				<li class="ft shouming-ziti"><span><b></b>{$store['position']}</span></li>
+			</a>
+			</ul>
+			
+			<div style="clear: both;"></div>
+		</div>
+		<br>
+		<div class="jianjiediv">
+				<ul>
+					<li class="jianjie-ziti">活动内容介绍</li>
+					<li style="border: 2px solid #ccc;"></li>
+					<li class="ziti-xiqing" style="text-indent:2em;">
+					{$event['content']}
+
+					</li>
+
+				</ul>
+			</div>
+			<div style="width: 100%;height: 60px"></div>
+	
+<!-- <lin href="/addons/wo_tricity/template/mobile/js/mui.js" rel="stylesheet" /> -->
+<script src="/addons/wo_tricity/template/mobile/js/mui.js"></script>
+		<script>
+				mui.init();
+				mui.plusReady(function() {
+			var gallery = mui('.mui-slider');
+			gallery.slider({
+				interval: 5000
+			});
+		});
+		mui.init({
+				swipeBack:true
+			});
+
+
+		</script>
+	</body>
+</html>

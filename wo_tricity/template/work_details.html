@@ -1,0 +1,57 @@
+{template 'common/header'}
+<style type="text/css">
+  .col-sm-9{
+    padding-top:7px;
+  }
+</style>
+<ul class="nav nav-tabs">
+     <li {if $operation == 'list'} class="active" {/if}><a href="{php echo  $this->createWebUrl('work', array('op'=>'list'));}">活动列表</a></li>
+       <li {if $operation == 'add'} class="active" {/if}><a href="{php echo  $this->createWebUrl('work', array('op'=>'add'));}">活动添加</a></li>
+        <li {if $operation == 'details'} class="active" {/if}><a>活动详情</a></li>
+</ul>
+<div class="clearfix"> 
+    <form id="theform" class="form form-horizontal" method="post">
+  
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                活动详情
+            </div>
+            <div class="panel-body">
+                
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">活动主题</label>
+                    <div class="col-sm-9 col-xs-12">
+                        {$work_details['name']}
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">活动内容</label>
+                    <div class="col-sm-9 col-xs-12">
+                      {$work_details['content']}
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">活动时间</label>
+                    <div class="col-sm-9 col-xs-12">
+                      {$work_details['starttime']}&nbsp;至&nbsp;{$work_details['endtime']}
+                    </div>
+                </div>
+                
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">活动宣传图</label>
+                    <div class="col-sm-9 col-xs-12">
+                     <img width="50%" src="/attachment/{$work_details['picture']}">
+                    </div>
+                 </div>
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">添加时间</label>
+                    <div class="col-sm-9 col-xs-12">
+                      {$work_details['time']}
+                    </div>
+                 </div>
+        
+            </div>
+      
+        </div>
+    </form>
+</div>

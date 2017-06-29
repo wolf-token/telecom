@@ -1,0 +1,92 @@
+{template 'common/header'}
+<style type="text/css">
+  .col-sm-9{
+    padding-top:7px;
+  }
+</style>
+<ul class="nav nav-tabs">
+      <li {if $operation == 'list'} class="active" {/if}><a href="{php echo  $this->createWebUrl('office', array('op'=>'list'));}">营业厅列表</a></li>
+       <li {if $operation == 'add'} class="active" {/if}><a href="{php echo  $this->createWebUrl('office', array('op'=>'add'));}">营业厅添加</a></li>
+        <li {if $operation == 'details'} class="active" {/if}><a>营业厅详情</a></li>
+</ul>
+<div class="clearfix"> 
+    <form id="theform" class="form form-horizontal" method="post">
+  
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                营业厅详情
+            </div>
+            <div class="panel-body">
+                
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">营业厅名称</label>
+                    <div class="col-sm-9 col-xs-12">
+                        {$office_details['name']}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">负责人姓名</label>
+                    <div class="col-sm-9 col-xs-12">
+                        {$office_details['principal']}
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">店长微信</label>
+                    <div class="col-sm-9 col-xs-12">
+                        {$office_details['wechat']}
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">电话</label>
+                    <div class="col-sm-9 col-xs-12">
+                      {$office_details['tell']}
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">营业厅地址</label>
+                    <div class="col-sm-9 col-xs-12">
+                      {$office_details['position']}
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">营业厅所属区域</label>
+                    <div class="col-sm-9 col-xs-12">
+                      {$office_details['area']}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">营业厅经度</label>
+                    <div class="col-sm-9 col-xs-12">
+                       {$office_details['lng']}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">营业厅纬度</label>
+                    <div class="col-sm-9 col-xs-12">
+                        {$office_details['lat']}
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">营业厅营业时间</label>
+                    <div class="col-sm-9 col-xs-12">
+                        {$office_details['starttime']}
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">营业厅展示图</label>
+                    <div class="col-sm-9 col-xs-12">
+                     <img src="/attachment/{$office_details['photo']}">
+                    </div>
+                 </div>
+                 <div class="form-group">
+                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">添加时间</label>
+                    <div class="col-sm-9 col-xs-12">
+                      {$office_details['time']}
+                    </div>
+                 </div>
+        
+            </div>
+      
+        </div>
+    </form>
+</div>

@@ -1,0 +1,75 @@
+{template 'common/header'}
+<ul class="nav nav-tabs">
+      <li {if $operation == 'list'} class="active" {/if}><a href="{php echo  $this->createWebUrl('maintain', array('op'=>'list'));}">维修网点列表</a></li>
+       <li {if $operation == 'add'} class="active" {/if}><a href="{php echo  $this->createWebUrl('maintain', array('op'=>'add'));}">维修网点添加</a></li>
+</ul>
+<div class="main">
+  <div class="panel panel-info">
+      <div class="panel-heading">筛选</div>
+      <div class="panel-body">
+        <form action="{php echo  $this->createWebUrl('maintain', array('op'=>'list'));}" method="post" class="form-horizontal" role="form">
+         <!--  <input type="hidden" name="c" value="site" />
+          <input type="hidden" name="a" value="entry" />
+          <input type="hidden" name="m" value="wo_telecom" />
+          <input type="hidden" name="do" value="maintain" />
+          <input type="hidden" name="op" value="list" /> -->
+          <div class="form-group">
+            <label class="col-xs-12 col-sm-2 col-md-2 col-lg-1 control-label">关键字</label>
+            <div class="col-sm-8 col-lg-9">
+              <input class="form-control" name="keyword" placeholder="网点名称/地址/所属区县/联系电话" type="text" value="">
+            </div>
+            <div class=" col-xs-12 col-sm-2 col-lg-2">
+              <button class="btn btn-default"><i class="fa fa-search"></i> 搜索</button>
+            </div>
+          </div>
+          <div class="form-group">
+          </div>
+        </form>
+      </div>
+  
+    </div>
+    <form action="" method="post" class="form-horizontal form">
+        <div class="panel panel-default">
+            <div class="table-responsive panel-body">
+                <table class="table table-hover">
+                    <thead class="navbar-inner">
+                    <tr>
+                        <th style="width:8%;">ID</th>
+                        <th style="width:15%;">维修网点名称</th>
+                        <th style="width:10%;">联系电话</th>
+                         <th style="width:10%;">营业时间</th>
+                        <th style="width:15%;">门店地址</th>
+                        <th style="width:10%;">所属区县</th>
+                         <th style="width:7%;">展示图</th>
+                        <th style="width:10%;">添加时间</th>
+                        <th style="width:12%;">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {loop $maintain_list $item}
+                    <tr>
+                        <td>{$item['id']}</td>
+                        <td>{$item['name']}</td>
+                        <td>{$item['tell']}</td>
+                        <td>{$item['start']}</td>
+                        <td>{$item['position']}</td>
+              
+                        <td>{$item['address']}</td>
+                        <td><img width="50%" src="/attachment/{$item['photo']}"></td>
+                        <td>{$item['time']}</td>          
+
+                        <td style="text-align:left;">
+	                        <a class="btn btn-info btn-sm" href="{php echo  $this->createWebUrl('maintain', array('op'=>'details','id'=>$item['id']));}" title="详情">详情</a>
+	                        <a class="btn btn-info btn-sm" href="{php echo  $this->createWebUrl('maintain', array('op'=>'edit','id'=>$item['id']));}" title="编辑">编辑</a>
+                           
+	                        <a class="btn btn-danger btn-sm" href="{php echo  $this->createWebUrl('maintain', array('op'=>'delete','id'=>$item['id']));}" title="删除网点" onclick="return confirm('此操作不可恢复，确认删除？');return false;"><i class="fa fa-times"></i></a>
+                      </td>                    
+                    </tr>
+                    {/loop}
+                    </tbody>
+                </table>
+                {$pager}
+            </div>
+        </div>
+    </form>
+</div>
